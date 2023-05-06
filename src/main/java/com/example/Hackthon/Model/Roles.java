@@ -9,13 +9,21 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@AllArgsConstructor
 @Getter
 @Setter
 public class Roles {
+    public Roles(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
   private   Long id ;
     @Column
    private String name ;
+
+    public Roles() {
+
+    }
 }

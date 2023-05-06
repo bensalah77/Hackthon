@@ -1,6 +1,6 @@
 package com.example.Hackthon.Model;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,8 +12,22 @@ import java.util.Collection;
 @Entity
 @Data
 @Getter@Setter
-@AllArgsConstructor
+
 public class User {
+
+    public User(Long id, String username, String name, String prenom, String email, String password, Collection<Roles> roles) {
+        this.id = id;
+        this.username = username;
+        this.name = name;
+        this.prenom = prenom;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
+
+    public User(Long id) {
+        this.id = id;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,4 +48,7 @@ public class User {
     private Collection<Roles> roles = new ArrayList<>();
 
 
+    public User() {
+
+    }
 }
