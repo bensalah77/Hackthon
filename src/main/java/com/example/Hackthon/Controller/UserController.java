@@ -20,7 +20,7 @@ import java.util.List;
 public class UserController {
     private final UserServiceImpli userServiceImpli;
     private final RolesServiceImpl rolesService;
-    @PostMapping("/user")
+    @PostMapping("/add")
     public ResponseEntity<User>saveUser(@RequestBody User user){
         URI uri=URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api").toUriString());
         return ResponseEntity.created(uri).body(userServiceImpli.save(user));
